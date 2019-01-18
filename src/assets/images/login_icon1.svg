@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="35px" viewBox="0 0 19 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Sketch Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Login" transform="translate(-311.000000, -725.000000)">
+            <g id="footer" transform="translate(235.000000, 725.000000)">
+                <g id="Sketch-Icon" transform="translate(77.000000, 0.000000)">
+                    <path d="M12,11.6 C12.2106852,11.2903303 12.4264809,10.9798635 12.6473802,10.6690781 M13.4324973,9.59262041 C13.9315773,8.92576634 14.4541015,8.25998585 15,7.6" id="Path-9" stroke="#FBD134" stroke-width="0.792" stroke-linecap="round"></path>
+                    <path d="M0.447368421,23.7408451 C0.447368421,22.8887138 0.857882501,21.0500631 1.67405564,18.6180487 M2.66563551,15.8995986 C2.94711921,15.1817246 3.25524794,14.4336782 3.58993944,13.6621188 M5.89367228,8.84678352 C7.08855178,6.56790532 9.60109533,2.53972353 11.1842105,0.242253521" id="Path-9" stroke="#FBD134" stroke-width="0.792" stroke-linecap="round" transform="translate(5.815789, 11.991549) rotate(-358.000000) translate(-5.815789, -11.991549) "></path>
+                    <path d="M13,21.6 C13,20.3174438 15,15.2343801 17,12.6" id="Path-14" stroke="#FBD134" stroke-width="0.792" stroke-linecap="round" transform="translate(15.000000, 17.100000) rotate(-360.000000) translate(-15.000000, -17.100000) "></path>
+                    <path d="M4.02631579,33.915493 C4.02631579,33.3477154 4.44613918,31.989351 5.0885106,30.4512545 M6.79070992,27.0051749 C7.12887992,26.4286256 7.47891364,25.8935287 7.82894737,25.4366197" id="Path-14" stroke="#FBD134" stroke-width="0.792" stroke-linecap="round" transform="translate(5.927632, 29.676056) rotate(-15.000000) translate(-5.927632, -29.676056) "></path>
+                    <path d="M4,14.1087545 C4,12.6787644 4.82090909,11.6 5.90909091,11.6 C6.57218182,11.6 7.15763636,12.0465583 7.5,12.7235039 C7.84236364,12.0465583 8.42781818,11.6 9.09090909,11.6 C10.1790909,11.6 11,12.6787644 11,14.1087545 C11,17.1125699 7.78636364,19.3992996 7.64986364,19.4950504 L7.5,19.6 L7.35013636,19.4950504 C7.21363636,19.3992996 4,17.1125699 4,14.1087545 Z" id="Shape" fill="#FFD012"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
