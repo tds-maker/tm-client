@@ -2,6 +2,13 @@ import React from 'react';
 import styled from '@emotion/styled'
 import { css } from '@emotion/core'
 
+import iconSVG from '../../utils/icon.svg.helper'
+
+
+const icon = iconSVG(18);
+const checkIcon = icon('#4285f4')('mdCheck')
+const closeIcon = icon('red')('mdClose')
+
 const base = () => css`
     display: block;
     width: 100%;
@@ -17,6 +24,7 @@ const base = () => css`
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 `
+
 const withMD = ({md}) => {
     if(md) {
         return css`
@@ -33,17 +41,82 @@ const withMD = ({md}) => {
             &::placeholder {
                 color: #b2b2b2;
             }
+
+            &:focus{
+                border-color: #4285f4;
+            }
         `
     }
 }
 
+const withValidation = ({ validation, touched }) => {
+    if(validation && touched){
+        return css`
+            &:valid + i::after {
+                content: "";
+                position: absolute;
+                top: 5px;
+                right: 0;
+                background: url("data:image/svg+xml;utf8, ${checkIcon}") no-repeat;
+                width: 18px;
+                height: 18px;
+            }
+
+            &:invalid + i::after {
+                content: "";
+                position: absolute;
+                top: 5px;
+                right: 0;
+                background: url("data:image/svg+xml;utf8, ${closeIcon}") no-repeat;
+                width: 18px;
+                height: 18px;
+            }
+        `
+    }
+}
+
+
 const InputElement = styled('input')(
     base,
-    withMD
+    withMD,
+    withValidation
 )
 
-const Input = (props) => (
-    <InputElement {...props} />
-)
+const InputIcon = styled('i')`
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    right: 0;
+`
+
+class Input extends React.PureComponent {
+    state = {
+        touched: false,
+        valid: false
+    }
+
+    onKeyUp = e => {
+        const { touched } = this.state;
+        const { value } = e.target;
+
+        if(!touched && value && value.length > 0){
+            this.setState({
+                touched: true
+            })
+        }
+    }
+
+    onInvalid = e => e.preventDefault()
+
+    render() {
+        const { props, onKeyUp, onInvalid } = this;
+        const { touched } = this.state;
+        return (<div style={{ position: 'relative'}}>
+            <InputElement {...props} onKeyUp={onKeyUp} onInvalid={onInvalid} touched={touched}/>
+            <InputIcon />
+        </div>)
+    }
+}
 
 export default Input;

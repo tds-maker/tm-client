@@ -109,14 +109,14 @@ const Login = () => {
                         <PageHeadingWrapper>
                             <H2>Welcome back TDSmaker!</H2>
                         </PageHeadingWrapper>
-                        <LoginForm>
+                        <LoginForm novalidate>
                             <FormGroup>
                                 <label>Email address</label>
-                                <Input type="email" placeholder="elon@tesla.com" md />
+                                <Input type="email" placeholder="elon@tesla.com" md validation required/>
                             </FormGroup>
                             <FormGroup>
                                 <label>Password</label>
-                                <Input type="password" placeholder="Enter 6 characters or more" md />
+                                <Input type="password" placeholder="Enter 6 characters or more" pattern=".{6,}" md validation required/>
                             </FormGroup>
                             <Button color="blue" block md>LOGIN</Button>
                             <FormOtherActions>
