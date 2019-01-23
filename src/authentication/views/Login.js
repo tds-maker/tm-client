@@ -5,7 +5,8 @@ import loginImage from '../../assets/images/login_img1.jpg'
 import loginIcon from '../../assets/images/login_icon1.svg'
 import { ReactComponent as LogoSmall } from '../../assets/images/logo_small.svg'
 
-import { Button, Input } from '../../components'
+import { signIn } from '../../services/authentication.service'
+import LoginForm from '../components/LoginForm'
 
 const PageColumns = styled('div')`
     height: 100%;
@@ -62,44 +63,9 @@ const H2 = styled('h2')`
     letter-spacing: 0.011em;
 `
 
-const LoginForm = styled('form')`
-    max-width: 310px;
-
-    label {
-        font-size: 16px;
-    }
-`
-
-const FormGroup = styled('div')`
-    margin-bottom: 38px;
-
-    label {
-        margin-bottom: 10px;
-    }
-
-    & + button {
-        margin-top: 40px;
-    }
-`
-
-const FormOtherActions = styled('div')`
-    margin-top: 20px;
-    font-size: 11px;
-    letter-spacing: 0.07em;
-    line-height: 1.6em;
-    text-align: center!important;
-
-    p {
-        margin-bottom: 6px;
-
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
-`
-
 
 const Login = () => {
+
    return (
     <PageColumns className="d-flex">
         <PageContent>
@@ -109,21 +75,7 @@ const Login = () => {
                         <PageHeadingWrapper>
                             <H2>Welcome back TDSmaker!</H2>
                         </PageHeadingWrapper>
-                        <LoginForm novalidate>
-                            <FormGroup>
-                                <label>Email address</label>
-                                <Input type="email" placeholder="elon@tesla.com" md validation required/>
-                            </FormGroup>
-                            <FormGroup>
-                                <label>Password</label>
-                                <Input type="password" placeholder="Enter 6 characters or more" pattern=".{6,}" md validation required/>
-                            </FormGroup>
-                            <Button color="blue" block md>LOGIN</Button>
-                            <FormOtherActions>
-                                <p><a href="/">Forgot password?</a></p>
-                                <p>Don’t have an account? <a href="/">Sign up here</a></p>
-                            </FormOtherActions>
-                        </LoginForm>
+                        <LoginForm onSubmit={signIn} />
                     </MainContentAreaInner>
                 </MainContentArea>
                 <CopyrightWrapper className="text-center">

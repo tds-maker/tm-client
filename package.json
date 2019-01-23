@@ -6,6 +6,7 @@
     "@emotion/core": "^10.0.6",
     "@emotion/styled": "^10.0.6",
     "@sentry/browser": "^4.5.0",
+    "ramda": "^0.26.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-icons": "^3.3.0",

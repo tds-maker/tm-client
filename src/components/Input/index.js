@@ -9,6 +9,15 @@ const icon = iconSVG(18);
 const checkIcon = icon('#4285f4')('mdCheck')
 const closeIcon = icon('red')('mdClose')
 
+const error = css`
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 0;
+    background: url("data:image/svg+xml;utf8, ${closeIcon}") no-repeat;
+    width: 18px;
+    height: 18px;
+`
 const base = () => css`
     display: block;
     width: 100%;
@@ -49,8 +58,14 @@ const withMD = ({md}) => {
     }
 }
 
-const withValidation = ({ validation, touched }) => {
-    if(validation && touched){
+const withValidation = ({ validation, touched, hasError}) => {
+    if (hasError){
+        return css`
+            & + i::after {
+                ${error}
+            }
+        `
+    }else if(validation && touched){
         return css`
             &:valid + i::after {
                 content: "";
@@ -63,13 +78,7 @@ const withValidation = ({ validation, touched }) => {
             }
 
             &:invalid + i::after {
-                content: "";
-                position: absolute;
-                top: 5px;
-                right: 0;
-                background: url("data:image/svg+xml;utf8, ${closeIcon}") no-repeat;
-                width: 18px;
-                height: 18px;
+                ${error}
             }
         `
     }
@@ -112,8 +121,10 @@ class Input extends React.PureComponent {
     render() {
         const { props, onKeyUp, onInvalid } = this;
         const { touched } = this.state;
+        const { hasError } = props;
+
         return (<div style={{ position: 'relative'}}>
-            <InputElement {...props} onKeyUp={onKeyUp} onInvalid={onInvalid} touched={touched}/>
+            <InputElement {...props} onKeyUp={onKeyUp} onInvalid={onInvalid} touched={touched} hasError={hasError}/>
             <InputIcon />
         </div>)
     }
